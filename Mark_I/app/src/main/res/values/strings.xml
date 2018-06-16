@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mark_I</string>
+    <string name="string_Text_Login">Логин</string>
+    <string name="string_Text_Pass">Пароль</string>
+    <string name="string_Button_Enter">Вход</string>
+    <string name="string_site">Сайт: </string>
+    <string name="string_Button_forgetPass">Забыли пароль?</string>
+    <string name="string_Tablayaut_Total">Общая статистика</string>
+    <string name="string_Tablayaut_PerDay">Ежедневная статистика</string>
+    <string name="string_spiner_default">Выбирете сайт</string>
+</resources>

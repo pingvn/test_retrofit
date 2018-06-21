@@ -30,6 +30,7 @@ public class Statistic extends AppCompatActivity {
         setContentView(R.layout.activity_statistic);
 
         String mId = getIntent().getExtras().getString(KEY,"");
+
         mViewPage = (ViewPager)findViewById(R.id.id_ViewPage);
         setupViewPager(mViewPage);
         mTabLayout = (TabLayout)findViewById(R.id.id_tl);

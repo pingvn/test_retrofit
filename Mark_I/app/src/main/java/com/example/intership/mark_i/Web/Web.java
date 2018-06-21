@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.example.intership.mark_i.DataModel.EnterUser;
 import com.example.intership.mark_i.DataModel.TotalStatisticModel;
 import com.example.intership.mark_i.DataModel.User;
+import com.example.intership.mark_i.LoadingActivity;
 import com.example.intership.mark_i.ShowTotalStatistic;
 import com.example.intership.mark_i.Statistic;
 
@@ -43,7 +44,7 @@ public class Web {
                 int mId = checkUser(mLocal, response.body());
                 if (mId >= 0) {
                    Toast.makeText(mContext,response.body().get(mId).getEmail(),Toast.LENGTH_LONG).show();
-                    Intent intent = Statistic.createIntent(mContext,response.body().get(mId).getId());
+                    Intent intent = LoadingActivity.createIntent(mContext,response.body().get(mId).getId());
                     mContext.startActivity(intent);
 
                 }else{

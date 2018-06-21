@@ -8,4 +8,5 @@
     <string name="string_Tablayaut_Total">Общая статистика</string>
     <string name="string_Tablayaut_PerDay">Ежедневная статистика</string>
     <string name="string_spiner_default">Выбирете сайт</string>
+    <string name="string_Loading">Загрузка...</string>
 </resources>

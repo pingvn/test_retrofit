@@ -19,6 +19,7 @@ public class TotalStatisticFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
     }
 
     @Nullable
@@ -26,7 +27,7 @@ public class TotalStatisticFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.activity_fragment_totalstatistic, container, false);
         mWeb = new Web();
-        mWeb.getTotalStatistic(getContext());
+        mWeb.getTotalStatistic(mView.getContext(),mView);
         return mView;
     }
 }

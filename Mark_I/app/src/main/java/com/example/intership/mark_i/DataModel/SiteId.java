@@ -1,6 +1,8 @@
 package com.example.intership.mark_i.DataModel;
 
-public class SiteId {
+import java.io.Serializable;
+
+public class SiteId implements Serializable {
     private Integer addedBy;
     private Integer id;
     private String name;

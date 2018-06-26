@@ -9,6 +9,7 @@ import com.example.intership.mark_i.DataModel.EnterUser;
 import com.example.intership.mark_i.DataModelSmallApi.Site;
 import com.example.intership.mark_i.DataModelSmallApi.TotalStatistic;
 import com.example.intership.mark_i.DataModelSmallApi.User;
+import com.example.intership.mark_i.ShowTotalStatistic;
 import com.example.intership.mark_i.StatisticActivity;
 
 import java.util.ArrayList;
@@ -69,8 +70,7 @@ public class Web {
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 int mId = checkUser(mLocal, response.body());
                 if (mId >= 0) {
-                    Toast.makeText(mContext,response.body().get(mId).getEmail(),Toast.LENGTH_LONG).show();
-                  //  Intent intent = LoadingActivity.createIntent(mContext,response.body().get(mId).getId());
+                  //  Toast.makeText(mContext,response.body().get(mId).getEmail(),Toast.LENGTH_LONG).show();
                     Intent mIntent = StatisticActivity.createIntent(mContext,response.body().get(mId).getId());
                     mContext.startActivity(mIntent);
 
@@ -124,10 +124,9 @@ public class Web {
             @Override
             public void onResponse(Call<List<TotalStatistic>> call, Response<List<TotalStatistic>> response) {
                 List<String> list = getSites(response.body());
-                Toast.makeText(mContext,list.get(0),Toast.LENGTH_LONG).show();
-                com.example.intership.mark_i.TotalStatistic ts = new com.example.intership.mark_i.TotalStatistic(mView);
-                ts.putSites(list);
-
+                ShowTotalStatistic ts = new ShowTotalStatistic(mView);
+                ts.putSites(list,response.body());
+               // ts.showTotalStatistic("1",response.body());
             }
 
             @Override
@@ -154,9 +153,4 @@ public class Web {
         return mList;
     }
 
-/*
-    private List<TotalStatisticModel> sorStatistic(List<TotalStatisticModel> mTSModel,String mId){
-        List<TotalStatisticModel> mModel = new ArrayList<>();
-
-    }*/
 }

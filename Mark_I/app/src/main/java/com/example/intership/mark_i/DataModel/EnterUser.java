@@ -1,4 +1,5 @@
 package com.example.intership.mark_i.DataModel;
+
 //класс для временного хранения введеных данных для входа
 public class EnterUser {
 

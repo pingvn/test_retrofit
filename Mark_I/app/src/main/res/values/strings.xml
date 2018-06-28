@@ -9,4 +9,5 @@
     <string name="string_Tablayaut_PerDay">Ежедневная статистика</string>
     <string name="string_spiner_default">Выбирете сайт</string>
     <string name="string_Loading">Загрузка...</string>
+    <string name="string_error_Login">Не верный логин или пароль!</string>
 </resources>

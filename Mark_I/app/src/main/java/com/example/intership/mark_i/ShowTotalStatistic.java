@@ -22,7 +22,7 @@ public class ShowTotalStatistic {
 
     public ShowTotalStatistic(View mView) {
         mSiteSpinner = (Spinner) mView.findViewById(R.id.id_total_statistic_secet_site);
-        mRecyclerView = (RecyclerView)mView.findViewById(R.id.id_TotalRecyclerView);
+        mRecyclerView = (RecyclerView) mView.findViewById(R.id.id_TotalRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mView.getContext()));
         mAdapter = new TotalStatisticAdapter(list);
         mRecyclerView.setAdapter(mAdapter);
@@ -36,7 +36,7 @@ public class ShowTotalStatistic {
         mSiteSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                showTotalStatistic(findSiteId(list.get(position),mListTotalStatistic),mListTotalStatistic);
+                showTotalStatistic(findSiteId(list.get(position), mListTotalStatistic), mListTotalStatistic);
             }
 
             @Override
@@ -46,14 +46,15 @@ public class ShowTotalStatistic {
         });
     }
 
-    public void showTotalStatistic(String siteID, List<TotalStatistic> mListTotalStatistic){
+    public void showTotalStatistic(String siteID, List<TotalStatistic> mListTotalStatistic) {
         this.list.clear();
-        this.list.addAll(sortbySiteId(siteID,mListTotalStatistic));
+        this.list.addAll(sortbySiteId(siteID, mListTotalStatistic));
         mRecyclerView.getAdapter().notifyDataSetChanged();
     }
-    private String findSiteId(String mSiteName,List<TotalStatistic> mListTotalStatistic){
-        for(int i = 0; i < mListTotalStatistic.size(); i++){
-            if(mListTotalStatistic.get(i).getSite_name().equals(mSiteName)){
+
+    private String findSiteId(String mSiteName, List<TotalStatistic> mListTotalStatistic) {
+        for (int i = 0; i < mListTotalStatistic.size(); i++) {
+            if (mListTotalStatistic.get(i).getSite_name().equals(mSiteName)) {
                 return mListTotalStatistic.get(i).getSite_id();
             }
         }
@@ -63,7 +64,7 @@ public class ShowTotalStatistic {
     private List<TotalStatistic> sortbySiteId(String siteID, List<TotalStatistic> mListTotalStatistic) {
         List<TotalStatistic> mList = new ArrayList<>();
         for (int i = 0; i < mListTotalStatistic.size(); i++) {
-            if(mListTotalStatistic.get(i).getSite_id().equals(siteID)){
+            if (mListTotalStatistic.get(i).getSite_id().equals(siteID)) {
                 mList.add(mListTotalStatistic.get(i));
             }
         }

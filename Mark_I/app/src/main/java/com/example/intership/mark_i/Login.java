@@ -1,7 +1,6 @@
 package com.example.intership.mark_i;
 
 import android.content.Context;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,12 +43,13 @@ public class Login {
         return true;
     }
 
-    private void onButtonEnter(final Web web){
+    private void onButtonEnter(final Web web) {
         mButtonEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(getDataUser()){
-                    web.getUsers(mLocalUser,mContext);
+                if (getDataUser()) {
+                    //web.getUsers(mLocalUser, mContext);
+                    web.autorization(mLocalUser.getmLogin(),mLocalUser.getmPassword(),mContext);
                 }
             }
         });

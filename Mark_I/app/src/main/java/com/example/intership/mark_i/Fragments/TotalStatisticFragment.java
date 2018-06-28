@@ -8,13 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
+import com.example.intership.mark_i.DataModelSmallApi.LoginAnsver;
 import com.example.intership.mark_i.R;
+import com.example.intership.mark_i.StatisticActivity;
 import com.example.intership.mark_i.Web.Web;
 
 public class TotalStatisticFragment extends Fragment {
-   private Web mWeb;
-   private View mView;
+    private Web mWeb;
+    private View mView;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class TotalStatisticFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.activity_fragment_totalstatistic, container, false);
         mWeb = new Web();
-        mWeb.getTotalStatistic(mView.getContext(),mView);
+        mWeb.getTotalStatisticToken(mView.getContext(), mView);
         return mView;
     }
 }

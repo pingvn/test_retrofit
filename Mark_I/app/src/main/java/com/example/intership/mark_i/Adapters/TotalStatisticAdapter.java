@@ -22,7 +22,7 @@ public class TotalStatisticAdapter extends RecyclerView.Adapter<TotalStatisticAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_card_total,parent,false);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_card_total, parent, false);
         return new ViewHolder(mView);
     }
 
@@ -39,7 +39,7 @@ public class TotalStatisticAdapter extends RecyclerView.Adapter<TotalStatisticAd
         return mList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView mTxtPerson;
         TextView mTxtRank;
 

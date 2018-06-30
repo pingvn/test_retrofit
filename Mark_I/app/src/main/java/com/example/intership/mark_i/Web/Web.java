@@ -175,9 +175,20 @@ public class Web {
     private List<String> getSites(List<TotalStatistic> mListTS) {
         List<String> mList = new ArrayList<>();
         for (int i = 0; i < mListTS.size(); i++) {
+            if(cheksite(mList,mListTS.get(i).getSite_name()))
             mList.add(mListTS.get(i).getSite_name());
         }
         return mList;
+    }
+    private boolean cheksite(List<String> list, String site){
+        if(list.size() > 0){
+            for(int i = 0; i < list.size(); i++){
+                if(site.equals(list.get(i))){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public void autorization(String user, String password, final Context mContext) {
